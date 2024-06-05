@@ -13,13 +13,47 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 	</head>
 	<body>
+		<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+			<div class="container-fluid">
+				<a class="navbar-brand">
+					<img
+						src="images/logo.png"
+						alt="Logo"
+						style="width: 40px"
+						class="rounded"
+					/>
+				</a>
+				<div class="collapse navbar-collapse" id="mynavbar">
+					<ul class="navbar-nav me-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="#home">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#services">Services</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#barbers">Our Barbers</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#location">Location & Contact</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#book">Book Appointment</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#cancel">Cancel Appointment</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 		<div class="bg-black p-3">
-			<section class="homepage-bg-image">
+			<section class="homepage-bg-image" id="home">
 				<div class="container">
 					<h1 class="text-center text-bg-light">
 						The Gentleman's Lounge Barbershop
 					</h1>
-					<hr />
+					<br />
 					<img src="images/logo.png" class="rounded" alt="Logo" />
 					<hr />
 					<button type="button" class="btn btn-light btn-lg">
@@ -27,54 +61,68 @@
 					</button>
 				</div>
 			</section>
-			<hr />
-			<h2 class="text-white">Services</h2>
-			<div class="row">
-				<div class="col-sm-8">
-					<table class="table table-dark table-borderless">
-						<tbody>
-							<tr>
-								<td>
-									Haircut (13+) - Standard men's harcuit, which includes buzz
-									cuts, fades, and trims
-								</td>
-								<td>$30</td>
-								<td>
-									Haircut (12 & under) - Same as Haircut (13+), but for the
-									young gents
-								</td>
-								<td>$24</td>
-							</tr>
-							<tr>
-								<td>Beard - Facial hair trims and shaping</td>
-								<td>$20</td>
-								<td>
-									Haircut and Beard - Combo haircut and beard service for a
-									lower price
-								</td>
-								<td>$42</td>
-							</tr>
-							<tr>
-								<td>
-									Head Hair Dye - Hair dye treatment for hair on the scalp
-								</td>
-								<td>$32</td>
-								<td>Beard Hair Dye - Hair dye treatment for facial hair</td>
-								<td>$25</td>
-							</tr>
-						</tbody>
-					</table>
+			<div class="text-white" id="services">
+				<br />
+				<br />
+				<br />
+				<h2>Services</h2>
+				<br />
+				<div class="row">
+					<div class="col-sm-5">
+						<p><strong>Haircut (13+)</strong></p>
+						<p>
+							Standard gentleman's harcuit, which includes buzz cuts, fades, and
+							trims
+						</p>
+					</div>
+					<div class="col-sm-1">
+						<p>$30</p>
+					</div>
+					<div class="col-sm-5">
+						<p><strong>Haircut (12 & under)</strong></p>
+						<p>Same as Haircut (13+), but for the young gents</p>
+					</div>
+					<div class="col-sm-1">
+						<p>$24</p>
+					</div>
 				</div>
-				<div class="col-sm-4">
-					<img
-						src="images/haircut.jpg"
-						class="rounded img-fluid"
-						alt="Haircut"
-					/>
+				<div class="row">
+					<div class="col-sm-5">
+						<p><strong>Beard</strong></p>
+						<p>Facial hair trims and shaping</p>
+					</div>
+					<div class="col-sm-1">
+						<p>$20</p>
+					</div>
+					<div class="col-sm-5">
+						<p><strong>Haircut and Beard</strong></p>
+						<p>Combo haircut and beard service for a lower price</p>
+					</div>
+					<div class="col-sm-1">
+						<p>$42</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-5">
+						<p><strong>Head Hair Dye</strong></p>
+						<p>Hair dye treatment for hair on the scalp</p>
+					</div>
+					<div class="col-sm-1">
+						<p>$32</p>
+					</div>
+					<div class="col-sm-5">
+						<p><strong>Beard Hair Dye</strong></p>
+						<p>Hair dye treatment for facial hair</p>
+					</div>
+					<div class="col-sm-1">
+						<p>$25</p>
+					</div>
 				</div>
 			</div>
-			<section class="barbers-bg-image">
-				<h2 class="text-white text-center">Our Barbers</h2>
+			<br />
+			<section class="barbers-bg-image" id="barbers">
+				<h2 class="text-center text-bg-light">Our Barbers</h2>
+				<br />
 				<div class="row">
 					<div class="col-sm-6 d-flex justify-content-center">
 						<div class="card" style="width: 400px">
@@ -128,37 +176,111 @@
 					</div>
 				</div>
 			</section>
-			<div class="text-white">
+			<div class="text-white" id="location">
+				<br />
+				<br />
+				<br />
 				<div class="row">
 					<div class="col-sm-6">
 						<h2>Location</h2>
+						<br />
+						<img src="images/address.png" class="rounded" />
+						<p>75 Laurier Avenue East, Ottawa, ON, K1N 6N5</p>
 					</div>
 					<div class="col-sm-6">
 						<h2>Location Hours</h2>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-6">
-						<img src="images/address.png" class="rounded" />
-						<p>75 Laurier Avenue East, Ottawa, ON</p>
-					</div>
-					<div class="col-sm-6">
-						<p>Monday to Friday</p>
+						<br />
+						<p><strong>Monday to Friday</strong></p>
 						<p>9:00 AM - 7:00 PM</p>
 						<hr />
-						<p>Saturday</p>
+						<p><strong>Saturday</strong></p>
 						<p>10:00 AM - 7:00 PM</p>
 						<hr />
-						<p>Sunday</p>
+						<p><strong>Sunday</strong></p>
 						<p>10:00 AM - 6:00 PM</p>
 						<hr />
 						<h2>Contact</h2>
-						<p>Phone Number:</p>
+						<br />
+						<p><strong>Phone Number:</strong></p>
 						<p>613-123-4567</p>
-						<p>Email:</p>
+						<p><strong>Email:</strong></p>
 						<p>info.tglb@gmail.com</p>
 					</div>
 				</div>
+			</div>
+			<br />
+			<div class="text-white" id="book">
+				<section class="book-cancel-bg-image">
+					<h2>Book An Appointment</h2>
+					<br />
+					<div class="row">
+						<div class="col-sm-3"></div>
+						<div class="col-sm-3"></div>
+						<div class="col-sm-3">
+							<h5>Service:</h5>
+							<select class="form-select">
+								<option>Haircut (13+)</option>
+								<option>Haircut (12 & under)</option>
+								<option>Beard</option>
+								<option>Haircut and Beard</option>
+								<option>Head Hair Dye</option>
+								<option>Beard Hair Dye</option>
+							</select>
+						</div>
+						<div class="col-sm-3">
+							<h5>Barber:</h5>
+							<select class="form-select">
+								<option>Alex</option>
+								<option>Taz</option>
+								<option>Jacob</option>
+								<option>Anthony</option>
+							</select>
+						</div>
+					</div>
+					<br />
+					<div class="row">
+						<div class="col-sm-3">
+							<h5>Your First Name:</h5>
+							<div class="input-group mb-3">
+								<input type="text" class="form-control" />
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<h5>Your Last Name:</h5>
+							<div class="input-group mb-3">
+								<input type="text" class="form-control" />
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<h5>Email:</h5>
+							<div class="input-group mb-3">
+								<input type="text" class="form-control" />
+							</div>
+						</div>
+					</div>
+					<br />
+					<div class="col-sm-12 text-center">
+						<button type="button" class="btn btn-secondary">
+							Book Appointment
+						</button>
+					</div>
+					<br />
+				</section>
+			</div>
+			<div class="text-white" id="cancel">
+				<section class="book-cancel-bg-image">
+					<h2>Cancel An Appointment</h2>
+					<br />
+					<h5>Appointment Number:</h5>
+					<form class="d-flex">
+						<div class="input-group mb-3">
+							<input type="text" class="form-control me-2" />
+						</div>
+						<button type="button" class="btn btn-secondary">
+							Cancel Appointment
+						</button>
+					</form>
+				</section>
 			</div>
 		</div>
 	</body>

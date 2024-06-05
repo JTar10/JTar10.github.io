@@ -22,3 +22,11 @@
     margin: 20px;
     border-radius: 10%;
 }
+
+.book-cancel-bg-image {
+    background-image: url("images/wood.jpg");
+    padding: 30px 50px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
