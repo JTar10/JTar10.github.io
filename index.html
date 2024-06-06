@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<title>The Gentleman's Lounge Barbershop</title>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" href="images/logo.png" />
 		<link rel="stylesheet" type="text/css" href="styles.css" />
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-		/>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-	</head>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    </head>
 	<body>
 		<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
 			<div class="container-fluid">
@@ -50,13 +49,13 @@
 		<div class="bg-black p-3">
 			<section class="homepage-bg-image" id="home">
 				<div class="container">
-					<h1 class="text-center text-bg-light">
+					<h1 class="text-center text-white text-bg-dark">
 						The Gentleman's Lounge Barbershop
 					</h1>
 					<br />
 					<img src="images/logo.png" class="rounded" alt="Logo" />
 					<hr />
-					<button type="button" class="btn btn-light btn-lg">
+					<button type="button" class="btn btn-dark btn-lg">
 						Book Appointment
 					</button>
 				</div>
@@ -121,7 +120,7 @@
 			</div>
 			<br />
 			<section class="barbers-bg-image" id="barbers">
-				<h2 class="text-center text-bg-light">Our Barbers</h2>
+				<h2 class="text-center text-white text-bg-dark">Our Barbers</h2>
 				<br />
 				<div class="row">
 					<div class="col-sm-6 d-flex justify-content-center">
@@ -184,21 +183,15 @@
 					<div class="col-sm-6">
 						<h2>Location</h2>
 						<br />
-						<img src="images/address.png" class="rounded" />
-						<p>75 Laurier Avenue East, Ottawa, ON, K1N 6N5</p>
-					</div>
-					<div class="col-sm-6">
-						<h2>Location Hours</h2>
-						<br />
 						<p><strong>Monday to Friday</strong></p>
 						<p>9:00 AM - 7:00 PM</p>
-						<hr />
+						<br />
 						<p><strong>Saturday</strong></p>
 						<p>10:00 AM - 7:00 PM</p>
-						<hr />
+						<br />
 						<p><strong>Sunday</strong></p>
 						<p>10:00 AM - 6:00 PM</p>
-						<hr />
+						<br />
 						<h2>Contact</h2>
 						<br />
 						<p><strong>Phone Number:</strong></p>
@@ -206,19 +199,45 @@
 						<p><strong>Email:</strong></p>
 						<p>info.tglb@gmail.com</p>
 					</div>
+					<div class="col-sm-6">
+						<br />
+						<img src="images/address.png" class="rounded" />
+						<p>75 Laurier Avenue East, Ottawa, ON, K1N 6N5</p>
+					</div>
 				</div>
 			</div>
 			<br />
 			<div class="text-white" id="book">
 				<section class="book-cancel-bg-image">
+					<br />
+					<br />
 					<h2>Book An Appointment</h2>
 					<br />
 					<div class="row">
-						<div class="col-sm-3"></div>
-						<div class="col-sm-3"></div>
+						<div class="col-sm-6">
+							<h5>Date</h5>
+							<div class="cs-form mb-3">
+								<input type="date" class="form-control" />
+							</div>
+						</div>
 						<div class="col-sm-3">
-							<h5>Service:</h5>
-							<select class="form-select">
+							<h5>Start Time</h5>
+							<div class="cs-form mb-3">
+								<input type="time" class="form-control" />
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<h5>End Time*</h5>
+							<div class="cs-form mb-3">
+								<input type="time" class="form-control" />
+							</div>
+						</div>
+
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<h5>Service</h5>
+							<select class="form-select mb-3">
 								<option>Haircut (13+)</option>
 								<option>Haircut (12 & under)</option>
 								<option>Beard</option>
@@ -227,9 +246,9 @@
 								<option>Beard Hair Dye</option>
 							</select>
 						</div>
-						<div class="col-sm-3">
-							<h5>Barber:</h5>
-							<select class="form-select">
+						<div class="col-sm-6">
+							<h5>Barber</h5>
+							<select class="form-select mb-3">
 								<option>Alex</option>
 								<option>Taz</option>
 								<option>Jacob</option>
@@ -240,19 +259,19 @@
 					<br />
 					<div class="row">
 						<div class="col-sm-3">
-							<h5>Your First Name:</h5>
+							<h5>First Name</h5>
 							<div class="input-group mb-3">
 								<input type="text" class="form-control" />
 							</div>
 						</div>
 						<div class="col-sm-3">
-							<h5>Your Last Name:</h5>
+							<h5>Last Name</h5>
 							<div class="input-group mb-3">
 								<input type="text" class="form-control" />
 							</div>
 						</div>
 						<div class="col-sm-6">
-							<h5>Email:</h5>
+							<h5>Email</h5>
 							<div class="input-group mb-3">
 								<input type="text" class="form-control" />
 							</div>
@@ -260,8 +279,9 @@
 					</div>
 					<br />
 					<div class="col-sm-12 text-center">
+						<p>*Note: Each service appointment takes 30 minutes, but you can book more than one appointment at once by adding 30 minutes (between start and end time) for every other appointment you want to book.</p>
 						<button type="button" class="btn btn-secondary">
-							Book Appointment
+							Confirm Appointment Booking
 						</button>
 					</div>
 					<br />
