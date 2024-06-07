@@ -37,7 +37,7 @@
 							<a class="nav-link" href="#location">Location & Contact</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#book">Book Appointment</a>
+							<a class="nav-link" href="#booking">Book Appointment</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#cancel">Cancel Appointment</a>
@@ -55,7 +55,7 @@
 					<br />
 					<img src="images/logo.png" class="rounded" alt="Logo" />
 					<hr />
-					<button type="button" class="btn btn-dark btn-lg">
+					<button type="button" class="btn btn-dark btn-lg" onclick="location.href='#book'">
 						Book Appointment
 					</button>
 				</div>
@@ -207,7 +207,8 @@
 				</div>
 			</div>
 			<br />
-			<div class="text-white" id="book">
+			<div id="booking"></div>
+			<div class="text-white active" id="book">
 				<section class="book-cancel-bg-image">
 					<br />
 					<br />
@@ -217,19 +218,19 @@
 						<div class="col-sm-6">
 							<h5>Date</h5>
 							<div class="cs-form mb-3">
-								<input type="date" class="form-control" />
+								<input type="date" class="form-control" id="appDate" />
 							</div>
 						</div>
 						<div class="col-sm-3">
 							<h5>Start Time</h5>
 							<div class="cs-form mb-3">
-								<input type="time" class="form-control" />
+								<input type="time" class="form-control" id="appStartTime" />
 							</div>
 						</div>
 						<div class="col-sm-3">
 							<h5>End Time*</h5>
 							<div class="cs-form mb-3">
-								<input type="time" class="form-control" />
+								<input type="time" class="form-control" id="appEndTime" />
 							</div>
 						</div>
 
@@ -237,7 +238,7 @@
 					<div class="row">
 						<div class="col-sm-6">
 							<h5>Service</h5>
-							<select class="form-select mb-3">
+							<select class="form-select mb-3" id="appService">
 								<option>Haircut (13+)</option>
 								<option>Haircut (12 & under)</option>
 								<option>Beard</option>
@@ -248,7 +249,7 @@
 						</div>
 						<div class="col-sm-6">
 							<h5>Barber</h5>
-							<select class="form-select mb-3">
+							<select class="form-select mb-3" id="appBarber">
 								<option>Alex</option>
 								<option>Taz</option>
 								<option>Jacob</option>
@@ -261,47 +262,185 @@
 						<div class="col-sm-3">
 							<h5>First Name</h5>
 							<div class="input-group mb-3">
-								<input type="text" class="form-control" />
+								<input type="text" class="form-control" id="firstName" />
 							</div>
 						</div>
 						<div class="col-sm-3">
 							<h5>Last Name</h5>
 							<div class="input-group mb-3">
-								<input type="text" class="form-control" />
+								<input type="text" class="form-control" id="lastName" />
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<h5>Email</h5>
 							<div class="input-group mb-3">
-								<input type="text" class="form-control" />
+								<input type="text" class="form-control" id="email"/>
 							</div>
 						</div>
 					</div>
 					<br />
 					<div class="col-sm-12 text-center">
 						<p>*Note: Each service appointment takes 30 minutes, but you can book more than one appointment at once by adding 30 minutes (between start and end time) for every other appointment you want to book.</p>
-						<button type="button" class="btn btn-secondary">
+						<button type="button" class="btn btn-secondary" onclick="bookConfirm()">
 							Confirm Appointment Booking
 						</button>
 					</div>
 					<br />
 				</section>
 			</div>
-			<div class="text-white" id="cancel">
+			<div class="text-white inactive" id="bookConfirmed">
+				<section class="book-cancel-bg-image">
+					<br />
+					<br />
+					<h2>Appointment Booking Confirmed!</h2>
+					<br />
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="mb-3">
+								<h5>Date:</h5>
+								<div id="confAppDate"></div>
+							</div>						
+						</div>
+						<div class="col-sm-4">
+							<div class="mb-3">
+								<h5>Start Time:</h5>
+								<div id="confAppStartTime"></div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="mb-3">
+								<h5>End Time:</h5>
+								<div id="confAppEndTime"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="mb-3">
+								<h5>Service:</h5>
+								<div id="confAppService"></div>
+							</div>	
+						</div>
+						<div class="col-sm-4">
+							<div class="mb-3">
+								<h5>Barber:</h5>
+								<div id="confAppBarber"></div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="mb-3">
+								<h5>Appointment Number:</h5>
+								<p>123456789</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12 text-center">
+						<button type="button" class="btn btn-secondary" onclick="bookConfirm()">
+							Book Another Appointment
+						</button>
+					</div>
+				</section>
+			</div>
+
+			<div class="text-white active" id="cancel">
 				<section class="book-cancel-bg-image">
 					<h2>Cancel An Appointment</h2>
 					<br />
 					<h5>Appointment Number:</h5>
 					<form class="d-flex">
 						<div class="input-group mb-3">
-							<input type="text" class="form-control me-2" />
+							<input type="text" class="form-control me-2" id="appNumber"/>
 						</div>
-						<button type="button" class="btn btn-secondary">
+						<button type="button" class="btn btn-secondary" onclick="cancelConfirm()">
 							Cancel Appointment
 						</button>
 					</form>
 				</section>
 			</div>
+
+			<div class="text-white inactive" id="cancelConfirmed">
+				<section class="book-cancel-bg-image">
+					<br />
+					<br />
+					<h2>Appointment Cancellation Confirmed!</h2>
+					<br />
+					<div class="row">
+						<div class="col-sm-12 text-center">
+							<div class="mb-3">
+								<h5>Appointment Cancelled:</h5>
+								<div class="mb-3" id="appNumberCancelled"></div>
+								<button type="button" class="btn btn-secondary" onclick="cancelConfirm()">
+									Cancel Another Appointment
+								</button>
+							</div>
+						</div>	
+					</div>
+				</section>
+			</div>
+
+			<script>
+				function bookConfirm() {
+					var book = document.getElementById('book');
+					var bookConfirmed = document.getElementById('bookConfirmed');
+
+					if (book.classList.contains('active')) {
+						var appDate = document.getElementById('appDate').value;
+						var appStartTime = document.getElementById('appStartTime').value;
+						var appEndTime = document.getElementById('appEndTime').value;
+						var service = document.getElementById('appService').value;
+						var barber = document.getElementById('appBarber').value;
+
+						document.getElementById('confAppDate').textContent = appDate;
+						document.getElementById('confAppStartTime').textContent = appStartTime;
+						document.getElementById('confAppEndTime').textContent = appEndTime;
+						document.getElementById('confAppService').textContent = service;
+						document.getElementById('confAppBarber').textContent = barber;
+
+						book.classList.remove('active');
+						book.classList.add('inactive');
+						bookConfirmed.classList.remove('inactive');
+						bookConfirmed.classList.add('active');
+
+					} else {
+						document.getElementById('appDate').value = '';
+						document.getElementById('appStartTime').value = '';
+						document.getElementById('appEndTime').value = '';
+						document.getElementById('appService').value = 'Haircut (13+)';
+						document.getElementById('appBarber').value = 'Alex';
+						
+						bookConfirmed.classList.remove('active');
+						bookConfirmed.classList.add('inactive');
+						book.classList.remove('inactive');
+						book.classList.add('active');
+	
+					}
+				}
+
+				function cancelConfirm() {
+					var cancel = document.getElementById('cancel');
+					var cancelConfirmed = document.getElementById('cancelConfirmed');
+
+					if (cancel.classList.contains('active')) {
+						var appNumber = document.getElementById('appNumber').value;
+
+						document.getElementById('appNumberCancelled').textContent = appNumber;
+
+						cancel.classList.remove('active');
+						cancel.classList.add('inactive');
+						cancelConfirmed.classList.remove('inactive');
+						cancelConfirmed.classList.add('active');
+
+					} else {
+						document.getElementById('appNumber').value = '';
+						
+						cancelConfirmed.classList.remove('active');
+						cancelConfirmed.classList.add('inactive');
+						cancel.classList.remove('inactive');
+						cancel.classList.add('active');
+	
+					}
+				}
+			</script>
 		</div>
 	</body>
 </html>

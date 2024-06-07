@@ -30,3 +30,11 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+
+.active {
+    display: block;
+}
+
+.inactive {
+    display: none;
+}
