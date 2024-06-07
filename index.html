@@ -25,22 +25,22 @@
 				<div class="collapse navbar-collapse" id="mynavbar">
 					<ul class="navbar-nav me-auto">
 						<li class="nav-item">
-							<a class="nav-link" href="#home">Home</a>
+							<a class="nav-link text-center" href="#home">Home</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#services">Services</a>
+							<a class="nav-link text-center" href="#services">Services</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#barbers">Our Barbers</a>
+							<a class="nav-link text-center" href="#barbers">Our Barbers</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#location">Location & Contact</a>
+							<a class="nav-link text-center" href="#location">Location & Contact</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#booking">Book Appointment</a>
+							<a class="nav-link text-center" href="#booking">Book Appointment</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#cancel">Cancel Appointment</a>
+							<a class="nav-link text-center" href="#cancel">Cancel Appointment</a>
 						</li>
 					</ul>
 				</div>
@@ -250,6 +250,7 @@
 						<div class="col-sm-6">
 							<h5>Barber</h5>
 							<select class="form-select mb-3" id="appBarber">
+								<option value="" selected></option>
 								<option>Alex</option>
 								<option>Taz</option>
 								<option>Jacob</option>
@@ -377,70 +378,69 @@
 					</div>
 				</section>
 			</div>
-
-			<script>
-				function bookConfirm() {
-					var book = document.getElementById('book');
-					var bookConfirmed = document.getElementById('bookConfirmed');
-
-					if (book.classList.contains('active')) {
-						var appDate = document.getElementById('appDate').value;
-						var appStartTime = document.getElementById('appStartTime').value;
-						var appEndTime = document.getElementById('appEndTime').value;
-						var service = document.getElementById('appService').value;
-						var barber = document.getElementById('appBarber').value;
-
-						document.getElementById('confAppDate').textContent = appDate;
-						document.getElementById('confAppStartTime').textContent = appStartTime;
-						document.getElementById('confAppEndTime').textContent = appEndTime;
-						document.getElementById('confAppService').textContent = service;
-						document.getElementById('confAppBarber').textContent = barber;
-
-						book.classList.remove('active');
-						book.classList.add('inactive');
-						bookConfirmed.classList.remove('inactive');
-						bookConfirmed.classList.add('active');
-
-					} else {
-						document.getElementById('appDate').value = '';
-						document.getElementById('appStartTime').value = '';
-						document.getElementById('appEndTime').value = '';
-						document.getElementById('appService').value = 'Haircut (13+)';
-						document.getElementById('appBarber').value = 'Alex';
-						
-						bookConfirmed.classList.remove('active');
-						bookConfirmed.classList.add('inactive');
-						book.classList.remove('inactive');
-						book.classList.add('active');
-	
-					}
-				}
-
-				function cancelConfirm() {
-					var cancel = document.getElementById('cancel');
-					var cancelConfirmed = document.getElementById('cancelConfirmed');
-
-					if (cancel.classList.contains('active')) {
-						var appNumber = document.getElementById('appNumber').value;
-
-						document.getElementById('appNumberCancelled').textContent = appNumber;
-
-						cancel.classList.remove('active');
-						cancel.classList.add('inactive');
-						cancelConfirmed.classList.remove('inactive');
-						cancelConfirmed.classList.add('active');
-
-					} else {
-						document.getElementById('appNumber').value = '';
-						
-						cancelConfirmed.classList.remove('active');
-						cancelConfirmed.classList.add('inactive');
-						cancel.classList.remove('inactive');
-						cancel.classList.add('active');
-	
-					}
-				}
-			</script>
 		</div>
+		<script>
+			function bookConfirm() {
+				var book = document.getElementById('book');
+				var bookConfirmed = document.getElementById('bookConfirmed');
+
+				if (book.classList.contains('active')) {
+					var appDate = document.getElementById('appDate').value;
+					var appStartTime = document.getElementById('appStartTime').value;
+					var appEndTime = document.getElementById('appEndTime').value;
+					var service = document.getElementById('appService').value;
+					var barber = document.getElementById('appBarber').value;
+
+					document.getElementById('confAppDate').textContent = appDate;
+					document.getElementById('confAppStartTime').textContent = appStartTime;
+					document.getElementById('confAppEndTime').textContent = appEndTime;
+					document.getElementById('confAppService').textContent = service;
+					document.getElementById('confAppBarber').textContent = barber;
+
+					book.classList.remove('active');
+					book.classList.add('inactive');
+					bookConfirmed.classList.remove('inactive');
+					bookConfirmed.classList.add('active');
+
+				} else {
+					document.getElementById('appDate').value = '';
+					document.getElementById('appStartTime').value = '';
+					document.getElementById('appEndTime').value = '';
+					document.getElementById('appService').value = 'Haircut (13+)';
+					document.getElementById('appBarber').value = 'Alex';
+					
+					bookConfirmed.classList.remove('active');
+					bookConfirmed.classList.add('inactive');
+					book.classList.remove('inactive');
+					book.classList.add('active');
+
+				}
+			}
+
+			function cancelConfirm() {
+				var cancel = document.getElementById('cancel');
+				var cancelConfirmed = document.getElementById('cancelConfirmed');
+
+				if (cancel.classList.contains('active')) {
+					var appNumber = document.getElementById('appNumber').value;
+
+					document.getElementById('appNumberCancelled').textContent = appNumber;
+
+					cancel.classList.remove('active');
+					cancel.classList.add('inactive');
+					cancelConfirmed.classList.remove('inactive');
+					cancelConfirmed.classList.add('active');
+
+				} else {
+					document.getElementById('appNumber').value = '';
+					
+					cancelConfirmed.classList.remove('active');
+					cancelConfirmed.classList.add('inactive');
+					cancel.classList.remove('inactive');
+					cancel.classList.add('active');
+
+				}
+			}
+		</script>
 	</body>
 </html>
